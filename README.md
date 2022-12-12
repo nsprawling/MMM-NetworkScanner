@@ -4,7 +4,7 @@ A module for MagicMirror which determines the status of devices on the network b
 ## Changes
 
 Forked with intention of maintaining:
- - 1st Updates (Unfinished) - Fixing CSS issue to center icons in columns, amend install readme & spelling corrections
+ - 1st Updates - Fixing CSS issue to center icons in columns, amend install readme & spelling corrections
 
 ## Example
 
@@ -106,6 +106,17 @@ chmod +x arps2mm.sh
 ````
 
 **Note** Updating the vendor database is recommended before generating the device array. See the [installation instructions](#installation) for details.
+
+**Note 2**
+When using columns, you can even the width of each column in the table by applying the below in your custom.css file:
+
+````css
+.MMM-NetworkScanner table {
+    max-width: *your max width*;
+    table-layout: fixed;
+}
+
+````
 
 ### Example Config
 
