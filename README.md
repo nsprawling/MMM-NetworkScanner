@@ -1,6 +1,11 @@
 # MMM-NetworkScanner
 A module for MagicMirror which determines the status of devices on the network based on their MAC address. It can also look up devices by IP addresses or hostnames. Static IP addresses work more consistently.
 
+## Changes
+
+Forked with intention of maintaining:
+ - 1st Updates - Fixing CSS issue to center icons in columns, amend install readme & spelling corrections
+
 ## Example
 
 devices as rows<br/>
@@ -30,7 +35,7 @@ sudo get-oui -v -u http://standards-oui.ieee.org/oui/oui.txt
 Clone this repository into the MagicMirror Modules folder:
 ````bash
 cd ~/MagicMirror/modules
-git clone https://github.com/ianperrin/MMM-NetworkScanner.git
+git clone https://github.com/nsprawling/MMM-NetworkScanner.git
 ````
 
 Install the dependencies (`sudo`, `ping`) in the MMM-NetworkScanner module folder:
