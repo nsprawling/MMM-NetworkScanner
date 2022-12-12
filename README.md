@@ -4,7 +4,7 @@ A module for MagicMirror which determines the status of devices on the network b
 ## Changes
 
 Forked with intention of maintaining:
- - 1st Updates - Fixing CSS issue to center icons in columns, amend install readme & spelling corrections
+ - 1st Updates (Unfinished) - Fixing CSS issue to center icons in columns, amend install readme & spelling corrections
 
 ## Example
 
