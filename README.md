@@ -73,7 +73,7 @@ Add the module to the modules array in the `config/config.js` file:
 | `colored` | `false` | `optional` determines whether devices are shown in the color defined in the devices section. |
 | `coloredSymbolOnly` | `false` | `optional` shows only the devices symbol. |
 | `showLastSeenWhenOffline:` | `false` | `optional` show last seen only when offline. |
-| `showDeviceColums:` | `false` | `optional` show devices as columns. |
+| `showDeviceColumns:` | `false` | `optional` show devices as columns. |
 | `coloredState:` | `false` | `optional` determines whether devices are shown in a color defined in the devices section and controlled by the online / offline state. |
 
 
@@ -176,7 +176,7 @@ Displays the specified devices as columns:
             ],
             sort: false,
             showUnknown: false,
-            showDeviceColums: true,
+            showDeviceColumns: true,
             coloredState: true,
         }
     }
