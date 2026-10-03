@@ -27,6 +27,13 @@ module.exports = NodeHelper.create({
         }
 
         if (notification === "SCAN_NETWORK") {
+            if (payload) {
+                this.config = payload;
+            }
+            if (!this.config) {
+                this.log(this.name + " cannot scan before the config was received");
+                return true;
+            }
             this.scanNetworkMAC();
             this.scanNetworkIP();
             return true;

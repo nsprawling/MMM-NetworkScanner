@@ -95,7 +95,7 @@ Module.register("MMM-NetworkScanner", {
 				var networkDevicesByMac = getKeyedObject(this.networkDevices, 'macAddress');
 				var payloadDevicesByMac = getKeyedObject(nextState, 'macAddress');
 
-				nextState = this.config.devices.map(device => {
+				var knownDeviceStates = this.config.devices.map(device => {
 					if (device.macAddress) {
 						var oldDeviceState = networkDevicesByMac[device.macAddress];
 						var payloadDeviceState = payloadDevicesByMac[device.macAddress];
@@ -113,6 +113,10 @@ Module.register("MMM-NetworkScanner", {
 						return device;
 					}
 				});
+
+				// Keep the unknown devices of the current scan (showUnknown)
+				var unknownDevices = nextState.filter(device => device.type === "Unknown");
+				nextState = knownDeviceStates.concat(unknownDevices);
 			}
 
 			this.networkDevices = nextState;
@@ -339,9 +343,10 @@ Module.register("MMM-NetworkScanner", {
 	scanNetwork: function() {
 		if (this.config.debug) Log.info(this.name + " is initiating network scan");
 		var self = this;
-		this.sendSocketNotification('SCAN_NETWORK');
+		// Send the config with every scan, so a restarted helper still knows it
+		this.sendSocketNotification('SCAN_NETWORK', this.config);
 		setInterval(function() {
-			self.sendSocketNotification('SCAN_NETWORK');
+			self.sendSocketNotification('SCAN_NETWORK', self.config);
 		}, this.config.updateInterval * 1000);
 		return;
 	},
